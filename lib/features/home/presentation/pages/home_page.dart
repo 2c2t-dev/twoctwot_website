@@ -320,7 +320,7 @@ class _ProjectCard extends StatelessWidget {
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
                     fontSize: 11,
                     fontWeight: FontWeight.w600,
-                    color: AppTheme.primaryColor,
+                    color: Colors.white,
                   ),
                 ),
                 backgroundColor: AppTheme.primaryColor.withValues(alpha: 0.15),
