@@ -413,7 +413,7 @@ class _ProjectCard extends StatelessWidget {
             label: Text(
               tech,
               style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                color: AppTheme.primaryColor,
+                color: Colors.white,
               ),
             ),
             backgroundColor: AppTheme.primaryColor.withValues(alpha: 0.1),
