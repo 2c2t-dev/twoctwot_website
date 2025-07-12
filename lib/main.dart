@@ -21,6 +21,9 @@ class TwoCTwotApp extends ConsumerWidget {
       debugShowCheckedModeBanner: false,
       theme: AppTheme.darkTheme,
       routerConfig: router,
+      shortcuts: const <LogicalKeySet, Intent>{
+        // Désactiver les raccourcis Meta qui causent l'erreur
+      },
       builder: (context, child) => ResponsiveBreakpoints.builder(
         child: child!,
         breakpoints: [

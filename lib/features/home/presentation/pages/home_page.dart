@@ -84,7 +84,7 @@ class _HeroSection extends StatelessWidget {
             
             // Proposition de valeur claire
             Text(
-              'Accélérez vos déploiements système',
+              "L'innovation par l'expérimentation informatique",
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                 fontSize: isDesktop ? 24 : 18,
                 height: 1.2,
@@ -138,7 +138,11 @@ class _HeroSection extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(8),
                     child: ElevatedButton.icon(
-                      onPressed: () => context.go('/projects'),
+                      onPressed: () {
+                        if (context.mounted) {
+                          context.go('/projects');
+                        }
+                      },
                       icon: const Icon(Icons.rocket_launch),
                       label: const Text('Essayer nos outils'),
                       style: ElevatedButton.styleFrom(
@@ -157,7 +161,11 @@ class _HeroSection extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(8),
                     child: OutlinedButton.icon(
-                      onPressed: () => context.go('/about'),
+                      onPressed: () {
+                        if (context.mounted) {
+                          context.go('/about');
+                        }
+                      },
                       icon: const Icon(Icons.trending_up),
                       label: const Text('Voir les performances'),
                       style: OutlinedButton.styleFrom(
@@ -189,8 +197,6 @@ class _ProjectsPreview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDesktop = ResponsiveBreakpoints.of(context).largerThan(TABLET);
-    
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 24),
       child: Column(
@@ -215,43 +221,47 @@ class _ProjectsPreview extends StatelessWidget {
           
           const SizedBox(height: 48),
           
-          ResponsiveRowColumn(
-            layout: isDesktop 
-              ? ResponsiveRowColumnType.ROW 
-              : ResponsiveRowColumnType.COLUMN,
-            rowMainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ResponsiveRowColumnItem(
-                child: _ProjectCard(
-                  title: 'GetISO',
-                  description: 'Site de téléchargement d\'images ISO à très haute vitesse',
-                  icon: Icons.download,
-                  technologies: ['Web', '50Gbps', 'Direct Link'],
-                ).animate()
-                  .fadeIn(duration: 600.ms, delay: 400.ms)
-                  .slideX(begin: -0.3),
-              ),
-              ResponsiveRowColumnItem(
-                child: _ProjectCard(
-                  title: 'NetISO',
-                  description: 'Service PXE moderne pour installation d\'OS via réseau',
-                  icon: Icons.network_check,
-                  technologies: ['Jinja', 'PXE', 'Boot'],
-                ).animate()
-                  .fadeIn(duration: 600.ms, delay: 600.ms)
-                  .slideY(begin: 0.3),
-              ),
-              ResponsiveRowColumnItem(
-                child: _ProjectCard(
-                  title: 'BootISO',
-                  description: 'Logiciel multiplateforme de téléchargement et flash USB',
-                  icon: Icons.usb,
-                  technologies: ['Flutter', 'Cross-Plateforme'],
-                ).animate()
-                  .fadeIn(duration: 600.ms, delay: 800.ms)
-                  .slideX(begin: 0.3),
-              ),
-            ],
+          Center(
+            child: Wrap(
+              spacing: 24,
+              runSpacing: 24,
+              alignment: WrapAlignment.center,
+              children: [
+                ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 300),
+                  child: _ProjectCard(
+                    title: 'GetISO',
+                    description: 'Site de téléchargement d\'images ISO à très haute vitesse',
+                    icon: Icons.download,
+                    technologies: ['Web', '50Gbps', 'Direct'],
+                  ).animate()
+                    .fadeIn(duration: 600.ms, delay: 400.ms)
+                    .slideX(begin: -0.3),
+                ),
+                ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 300),
+                  child: _ProjectCard(
+                    title: 'NetISO',
+                    description: 'Service PXE moderne pour installation d\'OS via réseau',
+                    icon: Icons.network_check,
+                    technologies: ['PXE', 'Boot', 'Network'],
+                  ).animate()
+                    .fadeIn(duration: 600.ms, delay: 600.ms)
+                    .slideY(begin: 0.3),
+                ),
+                ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 300),
+                  child: _ProjectCard(
+                    title: 'BootISO',
+                    description: 'Logiciel multiplateforme de téléchargement et flash USB',
+                    icon: Icons.usb,
+                    technologies: ['Flutter', 'USB', 'Cross-OS'],
+                  ).animate()
+                    .fadeIn(duration: 600.ms, delay: 800.ms)
+                    .slideX(begin: 0.3),
+                ),
+              ],
+            ),
           ),
         ],
       ),
@@ -275,8 +285,7 @@ class _ProjectCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 320,
-      margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 12),
+      margin: const EdgeInsets.symmetric(horizontal: 4, vertical: 8),
       child: TerminalCard(
         child: Column(
           mainAxisSize: MainAxisSize.min,

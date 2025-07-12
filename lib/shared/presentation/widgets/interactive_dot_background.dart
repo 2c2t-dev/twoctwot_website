@@ -62,12 +62,14 @@ class _InteractiveDotBackgroundState extends State<InteractiveDotBackground>
       return; // Ne pas mettre à jour si les dimensions sont invalides
     }
     
-    setState(() {
-      _mousePosition = Offset(
-        (position.dx / size.width).clamp(0.0, 1.0),
-        (position.dy / size.height).clamp(0.0, 1.0),
-      );
-    });
+    if (mounted) {
+      setState(() {
+        _mousePosition = Offset(
+          (position.dx / size.width).clamp(0.0, 1.0),
+          (position.dy / size.height).clamp(0.0, 1.0),
+        );
+      });
+    }
   }
 
   @override
@@ -100,6 +102,7 @@ class _InteractiveDotBackgroundState extends State<InteractiveDotBackground>
 
   @override
   void dispose() {
+    _controller.stop();
     _controller.dispose();
     super.dispose();
   }

@@ -2,15 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
-  // Couleurs principales - DA 2c2t
-  static const Color primaryColor = Color(0xFF081FF7);  // Bleu électrique 2c2t
-  static const Color secondaryColor = Color(0xFF00DDFF); // Cyan complémentaire
-  static const Color backgroundColor = Color(0xFF0A0A0A); // Noir profond
-  static const Color surfaceColor = Color(0xFF1A1A1A);   // Gris foncé
-  static const Color cardColor = Color(0xFF111111);      // Cards
-  static const Color textPrimary = Color(0xFF081FF7);    // Texte principal bleu
-  static const Color textSecondary = Color(0xFFB0B0B0);  // Texte secondaire
-  static const Color borderColor = Color(0xFF333333);    // Bordures
+  // Couleurs principales - Conservation de la DA 2c2t avec améliorations de lisibilité
+  static const Color primaryColor = Color(0xFF081FF7);     // Bleu électrique 2c2t conservé
+  static const Color primaryLight = Color(0xFF3B4EF8);     // Version plus claire du bleu 2c2t
+  static const Color secondaryColor = Color(0xFF06B6D4);   // Cyan complémentaire amélioré
+  static const Color backgroundColor = Color(0xFF0F0F0F);  // Noir moins profond pour meilleur contraste
+  static const Color surfaceColor = Color(0xFF1A1A1A);    // Surface équilibrée
+  static const Color cardColor = Color(0xFF151515);       // Cards avec bon contraste
+  static const Color textPrimary = Color(0xFFE5E7EB);     // Texte principal blanc cassé
+  static const Color textSecondary = Color(0xFFD1D5DB);   // Texte secondaire lisible
+  static const Color textMuted = Color(0xFF9CA3AF);       // Texte atténué
+  static const Color borderColor = Color(0xFF374151);     // Bordures visibles
+  static const Color borderLight = Color(0xFF4B5563);     // Bordures claires
+  
+  // Couleurs d'accent en harmonie avec le bleu 2c2t
+  static const Color accentBlue = Color(0xFF2563EB);      // Bleu d'accent lisible
+  static const Color accentCyan = Color(0xFF22D3EE);      // Cyan d'accent
+  static const Color successColor = Color(0xFF10B981);    // Vert succès
+  static const Color warningColor = Color(0xFFF59E0B);    // Orange warning
+  static const Color errorColor = Color(0xFFEF4444);      // Rouge erreur
 
   static ThemeData get darkTheme {
     return ThemeData(
@@ -26,6 +36,8 @@ class AppTheme {
         onSurface: textPrimary,
         onPrimary: backgroundColor,
         onSecondary: backgroundColor,
+        outline: borderColor,
+        outlineVariant: borderLight,
       ),
 
       // Typography - avec fallbacks robustes
@@ -34,12 +46,12 @@ class AppTheme {
       // App Bar Theme
       appBarTheme: AppBarTheme(
         backgroundColor: backgroundColor,
-        foregroundColor: textPrimary,
+        foregroundColor: primaryColor, // Utilisation du bleu 2c2t
         elevation: 0,
         titleTextStyle: GoogleFonts.museoModerno(
           fontSize: 20,
           fontWeight: FontWeight.bold,
-          color: textPrimary,
+          color: primaryColor, // Bleu 2c2t pour le titre
         ),
       ),
 
@@ -57,7 +69,7 @@ class AppTheme {
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           backgroundColor: primaryColor,
-          foregroundColor: backgroundColor,
+          foregroundColor: Colors.white,
           padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8),
@@ -140,22 +152,22 @@ class AppTheme {
       headlineSmall: GoogleFonts.museoModerno(
         fontSize: 24,
         fontWeight: FontWeight.w600,
-        color: textPrimary,
+        color: primaryColor, // Bleu 2c2t pour les sous-titres importants
       ),
       titleLarge: GoogleFonts.museoModerno(
         fontSize: 20,
         fontWeight: FontWeight.w500,
-        color: textPrimary,
+        color: primaryColor, // Bleu 2c2t pour les titres
       ),
       titleMedium: GoogleFonts.museoModerno(
         fontSize: 18,
         fontWeight: FontWeight.w500,
-        color: textPrimary,
+        color: primaryLight, // Version plus claire du bleu 2c2t
       ),
       titleSmall: GoogleFonts.museoModerno(
         fontSize: 16,
         fontWeight: FontWeight.w500,
-        color: textPrimary,
+        color: textSecondary,
       ),
       bodyLarge: GoogleFonts.jetBrainsMono(
         fontSize: 16,
@@ -167,14 +179,68 @@ class AppTheme {
         color: textSecondary,
         height: 1.5,
       ),
+      bodySmall: GoogleFonts.jetBrainsMono(
+        fontSize: 12,
+        color: textMuted,
+        height: 1.4,
+      ),
+      labelLarge: GoogleFonts.jetBrainsMono(
+        fontSize: 14,
+        fontWeight: FontWeight.w500,
+        color: textPrimary,
+      ),
+      labelMedium: GoogleFonts.jetBrainsMono(
+        fontSize: 12,
+        fontWeight: FontWeight.w500,
+        color: textSecondary,
+      ),
+      labelSmall: GoogleFonts.jetBrainsMono(
+        fontSize: 11,
+        fontWeight: FontWeight.w500,
+        color: textMuted,
+      ),
     );
   }
+
+  // Méthodes utilitaires pour la palette 2c2t
+  static Color get primary2c2tWithOpacity => primaryColor.withValues(alpha: 0.8);
+  static Color get primary2c2tBackground => primaryColor.withValues(alpha: 0.1);
+  static Color get primary2c2tBorder => primaryColor.withValues(alpha: 0.3);
+  
+  // Gradients signature 2c2t
+  static LinearGradient get primary2c2tGradient => LinearGradient(
+    colors: [
+      primaryColor.withValues(alpha: 0.8),
+      primaryLight.withValues(alpha: 0.6),
+    ],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+  );
+  
+  static LinearGradient get surface2c2tGradient => LinearGradient(
+    colors: [
+      primaryColor.withValues(alpha: 0.15),
+      primaryColor.withValues(alpha: 0.05),
+    ],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+  );
 }
 
-// Extensions pour les couleurs customisées
+// Extensions pour les couleurs customisées avec DA 2c2t
 extension AppColors on ColorScheme {
-  Color get matrix => const Color(0xFF00FF88);
-  Color get cyan => const Color(0xFF00DDFF);
-  Color get darkSurface => const Color(0xFF111111);
-  Color get border => const Color(0xFF333333);
+  Color get matrix => const Color(0xFF10B981);        // Vert matrix lisible
+  Color get cyan => AppTheme.secondaryColor;          // Cyan complémentaire
+  Color get darkSurface => AppTheme.cardColor;        // Surface sombre
+  Color get border => AppTheme.borderColor;           // Bordures
+  Color get borderLight => AppTheme.borderLight;      // Bordures claires
+  Color get textMuted => AppTheme.textMuted;          // Texte atténué
+  Color get success => AppTheme.successColor;         // Succès
+  Color get warning => AppTheme.warningColor;         // Warning
+  Color get error => AppTheme.errorColor;             // Erreur
+  
+  // Variations du bleu 2c2t pour la hiérarchie
+  Color get primary2c2t => AppTheme.primaryColor;     // Bleu 2c2t original
+  Color get primary2c2tLight => AppTheme.primaryLight; // Version claire
+  Color get primary2c2tDark => const Color(0xFF051399); // Version foncée
 }

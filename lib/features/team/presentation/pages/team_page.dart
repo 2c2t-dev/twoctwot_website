@@ -86,9 +86,9 @@ class _PageHeader extends StatelessWidget {
         if (isDesktop) 
           Row(
             children: [
-              _buildStatCard('3', 'Membres', Icons.people),
-              const SizedBox(width: 24),
               _buildStatCard('Multi-expertise', 'Compétences', Icons.build),
+              const SizedBox(width: 24),
+              _buildStatCard('4', 'Membres', Icons.people),
               const SizedBox(width: 24),
               _buildStatCard('Open Source', 'Philosophie', Icons.favorite),
             ],
@@ -185,23 +185,45 @@ class _TeamGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Wrap(
-        spacing: 32,
-        runSpacing: 32,
-        alignment: WrapAlignment.center,
+    final screenWidth = MediaQuery.of(context).size.width;
+    
+    // Si l'écran est très large (plus de 1600px), on affiche en ligne
+    if (screenWidth > 1600) {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: _teamMembers.asMap().entries.map((entry) {
           final index = entry.key;
           final member = entry.value;
-          return SizedBox(
-            width: 300,
-            child: _TeamMemberCard(member: member),
+          return Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: _TeamMemberCard(member: member),
+            ),
           ).animate(delay: ((index + 1) * 200).ms)
             .fadeIn(duration: 600.ms)
             .slideY(begin: 0.3);
         }).toList(),
-      ),
-    );
+      );
+    } else {
+      // Sinon affichage en grille pour tous les autres écrans
+      return Center(
+        child: Wrap(
+          spacing: 32,
+          runSpacing: 32,
+          alignment: WrapAlignment.center,
+          children: _teamMembers.asMap().entries.map((entry) {
+            final index = entry.key;
+            final member = entry.value;
+            return SizedBox(
+              width: 300,
+              child: _TeamMemberCard(member: member),
+            ).animate(delay: ((index + 1) * 200).ms)
+              .fadeIn(duration: 600.ms)
+              .slideY(begin: 0.3);
+          }).toList(),
+        ),
+      );
+    }
   }
 }
 
@@ -382,15 +404,16 @@ class TeamMember {
 
 final List<TeamMember> _teamMembers = [
   TeamMember(
-    name: 'Fabien BOURGEOIS',
-    username: '@fabien',
-    role: 'Fondateur & Lead Developer',
+    name: 'Fabien MILLET',
+    username: '@zipname',
+    role: 'Administrateur',
     bio: 'Développeur passionné avec une expertise en Flutter et Python. Spécialisé dans le développement d\'applications modernes et performantes.',
     avatar: 'assets/profile/fabien.jpg',
     technologies: ['Flutter', 'Dart', 'Python', 'Docker'],
     socialLinks: {
-      'GitHub': 'https://github.com/ZipName',
-      'LinkedIn': 'https://www.linkedin.com/in/fabien-bourgeois-dev/',
+      'GitHub': 'https://github.com/fabienmillet',
+      'LinkedIn': 'https://www.linkedin.com/in/fmillet/',
+      'Portfolio': 'https://fabien-millet.fr/',
     },
     achievements: [
       'Expert Flutter & Dart',
@@ -399,15 +422,14 @@ final List<TeamMember> _teamMembers = [
     ],
   ),
   TeamMember(
-    name: 'Maël BOSSER',
-    username: '@mael',
-    role: 'System Administrator',
+    name: 'Maël L.',
+    username: '@lexdrane',
+    role: 'Administrateur',
     bio: 'Administrateur système expert en virtualisation et infrastructure. Passionné par les technologies de conteneurisation et l\'automatisation.',
     avatar: 'assets/profile/mael.png',
     technologies: ['Docker', 'LXC', 'KVM', 'Linux'],
     socialLinks: {
-      'GitHub': 'https://github.com/Maelgn',
-      'LinkedIn': 'https://www.linkedin.com/in/mael-bosser/',
+      'Portfolio': 'https://lexdrane.fr/',
     },
     achievements: [
       'Expert en administration système',
@@ -417,7 +439,7 @@ final List<TeamMember> _teamMembers = [
   ),
   TeamMember(
     name: 'Nathan MANNESSIER',
-    username: '@nathan',
+    username: '@hulkhogan6262',
     role: 'Administrateur',
     bio: 'Administrateur réseau et développeur. Expert en solutions de déploiement et automatisation des systèmes.',
     avatar: 'assets/profile/nathan.png',
@@ -431,6 +453,22 @@ final List<TeamMember> _teamMembers = [
       'Expert en réseau et PXE',
       'Spécialiste déploiement',
       'Automatisation système',
+    ],
+  ),
+  TeamMember(
+    name: 'Lorenzo N.',
+    username: '@lorelix.fr',
+    role: 'Administrateur',
+    bio: 'Administrateur système passionné par les technologies web et l\'innovation numérique.',
+    avatar: 'assets/profile/lorenzo.png',
+    technologies: ['Web', 'System', 'Innovation', 'Tech'],
+    socialLinks: {
+      'Portfolio': 'https://lorelix.fr/',
+    },
+    achievements: [
+      'Expert en administration système',
+      'Spécialiste technologies web',
+      'Innovation numérique',
     ],
   ),
 ];
