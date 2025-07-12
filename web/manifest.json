@@ -1,13 +1,16 @@
 {
-    "name": "twoctwot_website",
-    "short_name": "twoctwot_website",
+    "name": "2c2t.dev - L'innovation par l'expérimentation informatique",
+    "short_name": "2c2t.dev",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
-    "orientation": "portrait-primary",
+    "background_color": "#081FF7",
+    "theme_color": "#081FF7",
+    "description": "2c2t.dev - L'innovation par l'expérimentation informatique. Développement de solutions open-source performantes et accessibles, projets système innovants et outils pour développeurs.",
+    "orientation": "any",
     "prefer_related_applications": false,
+    "scope": "/",
+    "lang": "fr",
+    "categories": ["productivity", "developer", "utilities"],
     "icons": [
         {
             "src": "icons/Icon-192.png",
