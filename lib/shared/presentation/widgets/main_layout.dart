@@ -9,23 +9,51 @@ import 'package:url_launcher/url_launcher.dart';
 class MainLayout extends StatelessWidget {
   final Widget child;
 
-  const MainLayout({Key? key, required this.child}) : super(key: key);
+  const MainLayout({super.key, required this.child});
 
   @override
   Widget build(BuildContext context) {
     final isDesktop = ResponsiveBreakpoints.of(context).largerThan(TABLET);
     return Scaffold(
       drawer: !isDesktop ? const _MobileDrawer() : null,
-      body: Column(
-        children: [
-          const _AppBar(),
-          Expanded(
-            child: SingleChildScrollView(
-              child: child,
-            ),
-          ),
-          const _Footer(),
-        ],
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          if (isDesktop) {
+            return Column(
+              children: [
+                const _AppBar(),
+                Expanded(
+                  child: SingleChildScrollView(
+                    child: child,
+                  ),
+                ),
+                const _Footer(),
+              ],
+            );
+          } else {
+            return Column(
+              children: [
+                const _AppBar(),
+                Expanded(
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.vertical,
+                    child: Container(
+                      width: double.infinity,
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          child,
+                          const _Footer(),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            );
+          }
+        },
       ),
     );
   }
@@ -78,77 +106,84 @@ class _MobileDrawer extends StatelessWidget {
         child: Column(
           children: [
             // Header du drawer
-            Container(
-              padding: const EdgeInsets.fromLTRB(24, 60, 24, 20),
-              child: Column(
-                children: [
-                  Container(
-                    width: 60,
-                    height: 60,
-                    padding: const EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [
-                          AppTheme.primaryColor.withValues(alpha: 0.2),
-                          AppTheme.primaryColor.withValues(alpha: 0.1),
-                        ],
+            SizedBox(
+              width: double.infinity,
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(24, 60, 24, 20),
+                child: Column(
+                  children: [
+                    Container(
+                      width: 60,
+                      height: 60,
+                      padding: const EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [
+                            AppTheme.primaryColor.withValues(alpha: 0.2),
+                            AppTheme.primaryColor.withValues(alpha: 0.1),
+                          ],
+                        ),
+                        borderRadius: BorderRadius.circular(16),
+                        border: Border.all(
+                          color: AppTheme.primaryColor.withValues(alpha: 0.3),
+                          width: 2,
+                        ),
                       ),
-                      borderRadius: BorderRadius.circular(16),
-                      border: Border.all(
-                        color: AppTheme.primaryColor.withValues(alpha: 0.3),
-                        width: 2,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(8),
+                        child: Image.asset(
+                          'assets/images/logo_2c2t.png',
+                          fit: BoxFit.contain,
+                          errorBuilder: (context, error, stackTrace) {
+                            return Icon(
+                              Icons.code_rounded,
+                              color: AppTheme.primaryColor,
+                              size: 28,
+                            );
+                          },
+                        ),
                       ),
                     ),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(8),
-                      child: Image.asset(
-                        'assets/images/logo_2c2t.png',
-                        fit: BoxFit.contain,
-                        errorBuilder: (context, error, stackTrace) {
-                          return Icon(
-                            Icons.code_rounded,
-                            color: AppTheme.primaryColor,
-                            size: 28,
-                          );
-                        },
+                    const SizedBox(height: 12),
+                    Text(
+                      '2c2t.dev',
+                      style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                        color: AppTheme.primaryColor,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 0.5,
+                        fontSize: 20,
                       ),
                     ),
-                  ),
-                  const SizedBox(height: 12),
-                  Text(
-                    '2c2t.dev',
-                    style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                      color: AppTheme.primaryColor,
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 0.5,
-                      fontSize: 20,
+                    const SizedBox(height: 2),
+                    Text(
+                      'Menu de navigation',
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        color: AppTheme.textSecondary.withValues(alpha: 0.8),
+                        letterSpacing: 0.3,
+                        fontSize: 13,
+                      ),
+                      textAlign: TextAlign.center,
                     ),
-                  ),
-                  const SizedBox(height: 2),
-                  Text(
-                    'Menu de navigation',
-                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                      color: AppTheme.textSecondary.withValues(alpha: 0.8),
-                      letterSpacing: 0.3,
-                      fontSize: 13,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
             
             // Divider
-            Container(
-              margin: const EdgeInsets.symmetric(horizontal: 24),
-              height: 1,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    Colors.transparent,
-                    AppTheme.primaryColor.withValues(alpha: 0.3),
-                    Colors.transparent,
-                  ],
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              child: SizedBox(
+                height: 1,
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        Colors.transparent,
+                        AppTheme.primaryColor.withValues(alpha: 0.3),
+                        Colors.transparent,
+                      ],
+                    ),
+                  ),
                 ),
               ),
             ),
@@ -167,53 +202,7 @@ class _MobileDrawer extends StatelessWidget {
               ),
             ),
             
-            // Footer du drawer
-            Container(
-              padding: const EdgeInsets.all(20),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Container(
-                    margin: const EdgeInsets.only(bottom: 16),
-                    height: 1,
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [
-                          Colors.transparent,
-                          AppTheme.primaryColor.withValues(alpha: 0.3),
-                          Colors.transparent,
-                        ],
-                      ),
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      _buildMobileDrawerSocialButton(
-                        context,
-                        Icons.code_rounded,
-                        'GitHub',
-                        'https://github.com/2c2t-dev',
-                      ),
-                      _buildMobileDrawerSocialButton(
-                        context,
-                        Icons.email_rounded,
-                        'Email',
-                        'mailto:contact@2c2t.dev',
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 12),
-                  Text(
-                    '© 2025 - Open Source',
-                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                      color: AppTheme.textSecondary.withValues(alpha: 0.6),
-                      fontSize: 11,
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            // Footer du drawer supprimé
           ],
         ),
       ),
@@ -320,39 +309,7 @@ class _MobileDrawer extends StatelessWidget {
     );
   }
 
-  Widget _buildMobileDrawerSocialButton(BuildContext context, IconData icon, String tooltip, String url) {
-    return Tooltip(
-      message: tooltip,
-      child: Material(
-        color: Colors.transparent,
-        child: InkWell(
-          onTap: () async {
-            final uri = Uri.parse(url);
-            if (await canLaunchUrl(uri)) {
-              await launchUrl(uri, mode: LaunchMode.externalApplication);
-            }
-          },
-          borderRadius: BorderRadius.circular(12),
-          child: Container(
-            padding: const EdgeInsets.all(12),
-            decoration: BoxDecoration(
-              color: AppTheme.primaryColor.withValues(alpha: 0.15),
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                color: AppTheme.primaryColor.withValues(alpha: 0.3),
-                width: 1.5,
-              ),
-            ),
-            child: Icon(
-              icon,
-              color: AppTheme.primaryColor,
-              size: 20,
-            ),
-          ),
-        ),
-      ),
-    );
-  }
+  // ...existing code...
 }
 
 
