@@ -37,7 +37,7 @@ class MainLayout extends StatelessWidget {
                 Expanded(
                   child: SingleChildScrollView(
                     scrollDirection: Axis.vertical,
-                    child: Container(
+                    child: SizedBox(
                       width: double.infinity,
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
