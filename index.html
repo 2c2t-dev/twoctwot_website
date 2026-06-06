@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/assets/images/logo_squared.png" />
+    <link rel="apple-touch-icon" href="/assets/images/logo_squared.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2c2t.dev - L'innovation par l'expérimentation</title>
+    <meta name="description" content="2c2t.dev est un collectif de projets open-tech dédié à la conception d'outils d'infrastructure, de déploiement de systèmes et d'auto-hébergement." />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=MuseoModerno:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://2c2t.dev/" />
+    <meta property="og:title" content="2c2t.dev - L'innovation par l'expérimentation" />
+    <meta property="og:description" content="2c2t.dev est un collectif de projets open-tech dédié à l'infrastructure et l'auto-hébergement." />
+    <meta property="og:image" content="https://2c2t.dev/assets/images/meta_tag.png" />
+    <meta property="og:site_name" content="2c2t.dev" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://2c2t.dev/" />
+    <meta name="twitter:title" content="2c2t.dev - L'innovation par l'expérimentation" />
+    <meta name="twitter:description" content="2c2t.dev est un collectif de projets open-tech dédié à l'infrastructure et l'auto-hébergement." />
+    <meta name="twitter:image" content="https://2c2t.dev/assets/images/meta_tag.png" />
+    <meta name="theme-color" content="#0a0a0c" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f8f9fa" media="(prefers-color-scheme: light)" />
+    
+    <!-- Google Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "2c2t.dev",
+      "url": "https://2c2t.dev/",
+      "logo": "https://2c2t.dev/assets/images/logo_squared.png",
+      "description": "Collectif de projets open-tech dédié à l'infrastructure et l'auto-hébergement.",
+      "sameAs": [
+        "https://github.com/2c2t-dev",
+        "https://discord.2c2t.dev/"
+      ]
+    }
+    </script>
+    
+    <script>
+      // Apply theme early to prevent flash of wrong theme
+      (function() {
+        try {
+          const storedTheme = localStorage.getItem('theme');
+          if (storedTheme) {
+            document.documentElement.dataset.theme = storedTheme;
+          } else {
+            const prefersDark = globalThis.matchMedia('(prefers-color-scheme: dark)').matches;
+            document.documentElement.dataset.theme = prefersDark ? 'dark' : 'light';
+          }
+        } catch (e) {
+          console.error(e);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

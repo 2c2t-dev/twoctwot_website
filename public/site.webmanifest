@@ -1,0 +1,22 @@
+{
+  "name": "2c2t.dev",
+  "short_name": "2c2t.dev",
+  "description": "Collectif de projets open-tech",
+  "icons": [
+    {
+      "src": "/assets/images/logo_squared.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/logo_squared.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#0a0a0c",
+  "background_color": "#0a0a0c",
+  "display": "standalone",
+  "start_url": "/",
+  "orientation": "portrait"
+}

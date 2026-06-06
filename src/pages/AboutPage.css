@@ -1,0 +1,120 @@
+.about-layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2rem;
+}
+
+.mt-4 {
+  margin-top: 2rem;
+}
+
+.about-main h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about-main h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.about-main p {
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+
+.values-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.values-list li {
+  padding: 0.75rem 1rem;
+  background: var(--bg-primary);
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  color: var(--text-secondary);
+}
+
+.values-list li strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.about-side {
+  display: flex;
+  flex-direction: column;
+}
+
+.dna-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.dna-item {
+  display: flex;
+  gap: 1rem;
+}
+
+.dna-icon {
+  font-size: 1.5rem;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-primary);
+  border-radius: 12px;
+  flex-shrink: 0;
+  border: 1px solid var(--border-light);
+}
+
+.dna-item h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.dna-item p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.stat-bento {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.5rem !important;
+}
+
+.stat-value {
+  font-size: 3rem;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 900px) {
+  .about-layout {
+    grid-template-columns: 1fr;
+  }
+}

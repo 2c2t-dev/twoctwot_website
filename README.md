@@ -1,60 +1,62 @@
-# 2c2t.dev - L'innovation par l'expérimentation informatique
+# 2c2t.dev - L'innovation par l'expérimentation
 
-## 🚀 Site vitrine moderne en Flutter Web
+<div align="center">
+  <img src="./public/assets/images/logo_squared.png" alt="2c2t.dev Logo" width="120" />
+</div>
 
-Site web moderne et performant pour présenter les projets 2c2t.dev avec un design sombre inspiré de l'univers terminal.
+<br />
 
-### ✨ Fonctionnalités
+Bienvenue sur le dépôt officiel du site web **2c2t.dev**. Ce site sert de vitrine pour notre collectif open-tech dédié à l'infrastructure, au déploiement de systèmes et à l'auto-hébergement.
 
-- **Navigation fluide** avec go_router et animations subtiles
-- **Responsive** adapté desktop, tablette et mobile
-- **Performances optimisées** pour un rendu fluide
+## 🚀 À propos
 
-### 🎯 Projets mis en avant
+2c2t.dev est avant tout un lieu d'échange et d'expérimentation technique. Nos projets phares incluent des solutions optimisées pour l'installation d'OS, telles que GetISO, NetISO et BootISO.
 
-- **GetISO** - Site de téléchargement d'ISO haute vitesse
-- **NetISO** - Service PXE pour installation d'OS via réseau
-- **BootISO** - Logiciel multiplateforme de téléchargement et flash USB
+Ce site présente notre écosystème, nos membres, ainsi que les différentes technologies que nous maîtrisons et implémentons au quotidien.
 
-### 🛠 Technologies utilisées
+## 🛠 Stack Technique
 
-- **Flutter Web** - Framework UI multiplateforme
-- **Riverpod** - Gestion d'état moderne
-- **go_router** - Navigation déclarative
-- **Google Fonts** - Typographie (JetBrains Mono)
-- **Flutter Animate** - Animations fluides
-- **Responsive Framework** - Design adaptatif
+- **Framework :** [React](https://react.dev/) 19 + [Vite](https://vitejs.dev/)
+- **Routing :** [React Router](https://reactrouter.com/) (avec Lazy Loading / Code Splitting natif via `Suspense`)
+- **Styling :** CSS Vanilla orienté "Premium Flat Design" (Glassmorphism, CSS Variables, Light/Dark mode adaptatif)
+- **Déploiement :** Optimisé pour [Cloudflare Pages](https://pages.cloudflare.com/) (fichiers `_headers` et `_redirects` natifs)
+- **Tests :** [Vitest](https://vitest.dev/) + React Testing Library
 
-### 🏃‍♂️ Lancement rapide
+## 💻 Installation & Développement
+
+Assurez-vous d'avoir [Node.js](https://nodejs.org/) installé sur votre machine.
 
 ```bash
-# Installation des dépendances
-flutter pub get
+# 1. Cloner le dépôt
+git clone https://github.com/2c2t-dev/twoctwot_website.git
+cd twoctwot_website
 
-# Lancement en mode développement
-flutter run -d chrome --web-port=8080
+# 2. Installer les dépendances
+npm install
 
-# Build de production
-flutter build web --release
+# 3. Lancer le serveur de développement local
+npm run dev
 ```
 
-### 📁 Structure du projet
+Le site sera accessible à l'adresse `http://localhost:5173`.
 
-```
-lib/
-├── core/
-│   ├── router/          # Configuration de navigation
-│   └── theme/           # Thème et couleurs
-├── features/
-│   ├── home/            # Page d'accueil
-│   ├── projects/        # Page des projets
-│   ├── about/           # Page à propos
-│   └── contact/         # Page de contact
-└── shared/
-    └── presentation/
-        └── widgets/     # Composants réutilisables
-```
+## 🏗 Scripts Disponibles
 
----
+- `npm run dev` : Lance le serveur de développement avec rechargement à chaud (HMR).
+- `npm run build` : Compile et optimise l'application pour la production dans le dossier `dist/`.
+- `npm run test` : Exécute la suite de tests unitaires via Vitest.
+- `npm run lint` : Vérifie la propreté du code avec ESLint.
 
-**2c2t.dev** - Développé avec ❤️ et Flutter
+## 🛡 Sécurité & Performances
+
+L'application a été structurée pour satisfaire les plus hauts standards techniques :
+- **Sécurité (Note A+ sur Mozilla Observatory)** : Content-Security-Policy stricte, HSTS, X-Frame-Options implémentés.
+- **Performance (PageSpeed 99+)** : Prévention du Cumulative Layout Shift (CLS), Code Splitting JavaScript, Lazy Loading asynchrone des médias sous la ligne de flottaison.
+
+## 🤝 Contribuer
+
+Les contributions, issues et pull requests sont les bienvenues ! N'hésitez pas à nous rejoindre sur notre Discord ou à interagir avec nos dépôts.
+
+## 📄 Licence
+
+Ce projet est distribué sous licence Open Source (GPL).

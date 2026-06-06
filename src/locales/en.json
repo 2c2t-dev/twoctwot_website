@@ -1,0 +1,95 @@
+{
+  "nav": {
+    "projects": "Projects",
+    "about": "About",
+    "team": "Team",
+    "contact": "Contact",
+    "language": "FR"
+  },
+  "footer": {
+    "desc": "Open-tech collective dedicated to infrastructure.",
+    "links": "Useful Links",
+    "socials": "Socials",
+    "rights": "All rights reserved."
+  },
+  "home": {
+    "seo_desc": "2c2t.dev is an open-tech project collective dedicated to infrastructure and self-hosting.",
+    "subtitle1": "Innovation through experimentation",
+    "subtitle2": "Open-tech projects dedicated to infrastructure, network deployment, and self-hosting.",
+    "btn_explore": "Explore Projects",
+    "btn_about": "Discover Our DNA",
+    "projects_title": "Featured Projects",
+    "projects_desc": "Solutions designed to streamline and accelerate system installations.",
+    "tech_title": "Our Ecosystem",
+    "community_title": "Join the Community",
+    "community_desc": "2c2t.dev is first and foremost a place for exchange and experimentation.",
+    "discord_title": "The Discord Community",
+    "discord_desc": "Join a community of enthusiasts. Discuss infrastructure, share your experiments, and help evolve our tools.",
+    "btn_discord": "Join the Server",
+    "github_title": "Open-Source First",
+    "github_desc": "All our tools are open. Check the code, propose improvements, or learn from our technical architecture directly on our repositories.",
+    "btn_github": "Explore GitHub"
+  },
+  "projects": {
+    "seo_desc": "Discover our open-tech solutions like GetISO and NetISO.",
+    "title": "Our Projects",
+    "desc": "The 2c2t tool suite for infrastructure and system deployment.",
+    "btn_source": "Source Code",
+    "btn_access": "Access"
+  },
+  "project_getiso": {
+    "tagline": "High-Speed Download",
+    "desc": "Optimized platform for downloading system images."
+  },
+  "project_netiso": {
+    "tagline": "Modern PXE Service",
+    "desc": "Network boot (PXE / iPXE) to install operating systems directly via the network."
+  },
+  "project_bootiso": {
+    "tagline": "Bootable Media Creation",
+    "desc": "Software utility interconnected with GetISO automating secure download and USB flashing."
+  },
+  "status": {
+    "active": "Active",
+    "upcoming": "Upcoming",
+    "indev": "In Development"
+  },
+  "about": {
+    "seo_desc": "Discover the technical DNA, mission, and values of the 2c2t.dev open-tech collective.",
+    "title": "About 2c2t",
+    "desc": "The technical DNA and vision behind the collective.",
+    "mission_title": "Our Mission",
+    "mission_desc": "We are a group of sysadmins, developers, and cybersecurity enthusiasts. Our goal is to simplify and modernize bare-metal infrastructure by creating fast, reliable, and accessible open-source tools.",
+    "values_title": "Our Values",
+    "val_open_title": "Open-Source",
+    "val_open_desc": "Knowledge sharing is at the core of our approach.",
+    "val_perf_title": "Performance",
+    "val_perf_desc": "Tools designed to be fast and resource-efficient.",
+    "val_exp_title": "Experimentation",
+    "val_exp_desc": "We test, break, and rebuild to learn.",
+    "dna_title": "Our DNA",
+    "dna_bm_title": "Bare-Metal",
+    "dna_bm_desc": "Deployments on physical hardware",
+    "dna_net_title": "Network",
+    "dna_net_desc": "Routing, PXE, global infrastructure",
+    "stat_projects": "Projects",
+    "stat_members": "Members"
+  },
+  "team": {
+    "seo_desc": "Meet the enthusiasts and technical experts behind the 2c2t.dev project.",
+    "title": "The Team",
+    "desc": "The passionate people behind the 2c2t.dev project.",
+    "role_admin": "Administrator"
+  },
+  "contact": {
+    "seo_desc": "Discuss infrastructure projects with us or join our open community.",
+    "title": "Contact",
+    "desc": "We are always open to discussions, project ideas, and contributions.",
+    "methods_title": "Contact Methods",
+    "info_title": "Information",
+    "info_location_title": "Based in France",
+    "info_location_desc": "Collective operating mainly from the Paris region and the south of France.",
+    "info_contrib_title": "Open to contributions",
+    "info_contrib_desc": "Our projects are open. Feel free to submit PRs or discuss ideas on Discord."
+  }
+}
