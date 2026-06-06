@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 const SEO = ({ title, description, schema }) => {
   useEffect(() => {
@@ -36,6 +37,12 @@ const SEO = ({ title, description, schema }) => {
   }, [title, description, schema]);
 
   return null;
+};
+
+SEO.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  schema: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
 };
 
 export default SEO;

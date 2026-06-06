@@ -12,10 +12,10 @@ const InteractiveBackground = () => {
       });
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
+    globalThis.addEventListener('mousemove', handleMouseMove);
 
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
+      globalThis.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
 
