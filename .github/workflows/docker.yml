@@ -2,9 +2,7 @@ name: Docker Build & Publish
 
 on:
   push:
-    branches: [ "main", "develop" ]
-  pull_request:
-    branches: [ "main", "develop" ]
+    branches: [ "main", "develop", "fix/**" ]
 
 jobs:
   build:
