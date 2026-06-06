@@ -38,10 +38,26 @@ const ProjectsPage = () => {
 
   const schema = JSON.stringify({
     "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "2c2t.dev - " + t('projects.title'),
-    "url": "https://2c2t.dev/projects",
-    "description": t('projects.seo_desc')
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "name": "2c2t.dev - " + t('projects.title'),
+        "url": "https://2c2t.dev/projects",
+        "description": t('projects.seo_desc')
+      },
+      ...projects.map(project => ({
+        "@type": "SoftwareApplication",
+        "name": project.title,
+        "description": project.description,
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": project.title === 'BootISO' ? "Windows, macOS, Linux" : "Linux, Web",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR"
+        }
+      }))
+    ]
   });
 
   return (

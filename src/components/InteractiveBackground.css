@@ -44,3 +44,10 @@
 [data-theme="light"] {
   --accent-glow: rgba(0, 82, 255, 0.15); /* Softer for light mode */
 }
+
+/* Hide spotlight on mobile devices */
+@media (max-width: 768px) {
+  .interactive-spotlight {
+    display: none;
+  }
+}
