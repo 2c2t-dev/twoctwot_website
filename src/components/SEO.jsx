@@ -19,24 +19,16 @@ const SEO = ({ title, description, schema }) => {
       const twitterDesc = document.querySelector('meta[name="twitter:description"]');
       if (twitterDesc) twitterDesc.content = description;
     }
+  }, [title, description]);
 
-    let script = null;
-    if (schema) {
-      script = document.createElement('script');
-      script.type = 'application/ld+json';
-      // If schema is passed as string, use it directly, otherwise stringify
-      script.text = typeof schema === 'string' ? schema : JSON.stringify(schema);
-      document.head.appendChild(script);
-    }
+  if (!schema) return null;
 
-    return () => {
-      if (script && document.head.contains(script)) {
-        script.remove();
-      }
-    };
-  }, [title, description, schema]);
-
-  return null;
+  return (
+    <script 
+      type="application/ld+json" 
+      dangerouslySetInnerHTML={{ __html: typeof schema === 'string' ? schema : JSON.stringify(schema) }} 
+    />
+  );
 };
 
 SEO.propTypes = {
