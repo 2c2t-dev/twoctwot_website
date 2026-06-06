@@ -1,33 +1,57 @@
-import { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet-async';
+import { useLocation } from 'react-router-dom';
 
 const SEO = ({ title, description, schema }) => {
-  useEffect(() => {
-    if (title) {
-      document.title = title;
-      const ogTitle = document.querySelector('meta[property="og:title"]');
-      if (ogTitle) ogTitle.content = title;
-      const twitterTitle = document.querySelector('meta[name="twitter:title"]');
-      if (twitterTitle) twitterTitle.content = title;
-    }
-    
-    if (description) {
-      const metaDesc = document.querySelector('meta[name="description"]');
-      if (metaDesc) metaDesc.content = description;
-      const ogDesc = document.querySelector('meta[property="og:description"]');
-      if (ogDesc) ogDesc.content = description;
-      const twitterDesc = document.querySelector('meta[name="twitter:description"]');
-      if (twitterDesc) twitterDesc.content = description;
-    }
-  }, [title, description]);
+  const location = useLocation();
+  const pathParts = location.pathname.split('/').filter(Boolean);
 
-  if (!schema) return null;
+  // Generate BreadcrumbList
+  const breadcrumbItems = [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://2c2t.dev/"
+    }
+  ];
+
+  let currentPath = "https://2c2t.dev";
+  pathParts.forEach((part, index) => {
+    currentPath += `/${part}`;
+    breadcrumbItems.push({
+      "@type": "ListItem",
+      "position": index + 2,
+      "name": part.charAt(0).toUpperCase() + part.slice(1),
+      "item": currentPath
+    });
+  });
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": breadcrumbItems
+  };
 
   return (
-    <script 
-      type="application/ld+json" 
-      dangerouslySetInnerHTML={{ __html: typeof schema === 'string' ? schema : JSON.stringify(schema) }} 
-    />
+    <Helmet>
+      {title && <title>{title}</title>}
+      {title && <meta property="og:title" content={title} />}
+      {title && <meta name="twitter:title" content={title} />}
+      
+      {description && <meta name="description" content={description} />}
+      {description && <meta property="og:description" content={description} />}
+      {description && <meta name="twitter:description" content={description} />}
+      
+      {schema && (
+        <script type="application/ld+json">
+          {typeof schema === 'string' ? schema : JSON.stringify(schema)}
+        </script>
+      )}
+      <script type="application/ld+json">
+        {JSON.stringify(breadcrumbSchema)}
+      </script>
+    </Helmet>
   );
 };
 

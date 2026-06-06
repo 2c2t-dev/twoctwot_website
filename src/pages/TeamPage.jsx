@@ -46,7 +46,9 @@ const TeamPage = () => {
       "item": {
         "@type": "Person",
         "name": member.name,
-        "jobTitle": t(member.roleKey)
+        "jobTitle": t(member.roleKey),
+        "image": `https://2c2t.dev${member.avatar}`,
+        "sameAs": Object.values(member.links)
       }
     }))
   });
