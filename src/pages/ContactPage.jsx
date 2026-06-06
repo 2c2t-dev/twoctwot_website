@@ -39,7 +39,7 @@ const ContactPage = () => {
             <h2 className="brand-font mb-4">{t('contact.methods_title')}</h2>
             <div className="contact-methods">
               {contactMethods.map((method) => (
-                <a key={method.label} href={method.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                <a key={method.label} href={method.url} target="_blank" rel="noopener noreferrer" className="contact-link-wrapper">
                   <div className="contact-card">
                     <div className="contact-card-info">
                       <span className="contact-label brand-font">{method.label}</span>

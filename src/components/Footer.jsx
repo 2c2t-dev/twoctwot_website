@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="footer-main">
           <div className="footer-brand">
             <div className="footer-logo-row">
-              <img src="/assets/images/logo_2c2t.png" alt="2c2t logo" className="footer-logo" width="164" height="98" />
+              <img src="/assets/images/logo_2c2t.png" alt="2c2t logo" className="footer-logo" width="164" height="98" loading="lazy" decoding="async" />
               <h3 className="footer-brand-name brand-font">2c2t.dev</h3>
             </div>
             <p className="footer-tagline">{t('footer.desc')}</p>

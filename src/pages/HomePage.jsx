@@ -63,16 +63,17 @@ const HomePage = () => {
             alt="2c2t.dev logo" 
             width="100"
             height="56"
-            className="animate-fade-in-up" 
-            style={{ height: '56px', width: 'auto', objectFit: 'contain', marginBottom: '1.5rem' }} 
+            fetchPriority="high"
+            decoding="async"
+            className="hero-logo animate-fade-in-up" 
           />
           <h1 className="hero-title animate-fade-in-up delay-1">
             2c2t.dev
           </h1>
-          <p className="hero-subtitle animate-fade-in-up delay-2" style={{ fontSize: '1.5rem', color: 'var(--accent-primary)', fontWeight: 600 }}>
+          <p className="hero-subtitle hero-subtitle-primary animate-fade-in-up delay-2">
             {t('home.subtitle1')}
           </p>
-          <p className="hero-subtitle animate-fade-in-up delay-3" style={{ marginTop: '-1.5rem' }}>
+          <p className="hero-subtitle hero-subtitle-secondary animate-fade-in-up delay-3">
             {t('home.subtitle2')}
           </p>
           <div className="hero-actions animate-fade-in-up delay-3">
