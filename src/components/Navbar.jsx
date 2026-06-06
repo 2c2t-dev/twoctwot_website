@@ -53,7 +53,7 @@ const Navbar = () => {
     <div className={`navbar-wrapper ${isScrolled ? 'scrolled' : ''}`}>
       <nav className="navbar container">
         <NavLink to="/" className="navbar-brand" aria-label="Accueil">
-          <img src="/assets/images/logo_2c2t.png" alt="2c2t logo" className="navbar-logo" />
+          <img src="/assets/images/logo_2c2t.png" alt="2c2t logo" className="navbar-logo" width="164" height="98" />
           <div className="brand-font">
             <span className="logo-text">2c2t.dev</span>
             <span className="logo-dot"></span>
