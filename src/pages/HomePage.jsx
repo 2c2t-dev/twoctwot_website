@@ -41,9 +41,28 @@ const HomePage = () => {
 
   const schema = JSON.stringify({
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "2c2t.dev",
-    "url": "https://2c2t.dev/"
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://2c2t.dev/#website",
+        "name": "2c2t.dev",
+        "url": "https://2c2t.dev/"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://2c2t.dev/#organization",
+        "name": "2c2t.dev",
+        "url": "https://2c2t.dev/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://2c2t.dev/assets/images/logo_2c2t.png"
+        },
+        "sameAs": [
+          "https://github.com/2c2t-dev",
+          "https://discord.2c2t.dev/"
+        ]
+      }
+    ]
   });
 
   return (
