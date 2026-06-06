@@ -8,7 +8,9 @@ COPY package.json package-lock.json ./
 RUN npm ci
 
 # Copy the rest of the application
-COPY . .
+COPY public/ ./public/
+COPY src/ ./src/
+COPY index.html vite.config.js eslint.config.js ./
 
 # Build the application
 RUN npm run build
