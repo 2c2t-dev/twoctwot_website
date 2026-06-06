@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import './BentoCard.css';
 
 const BentoCard = ({ children, className = '', highlight = false }) => {
@@ -6,6 +7,12 @@ const BentoCard = ({ children, className = '', highlight = false }) => {
       {children}
     </div>
   );
+};
+
+BentoCard.propTypes = {
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
+  highlight: PropTypes.bool,
 };
 
 export default BentoCard;
