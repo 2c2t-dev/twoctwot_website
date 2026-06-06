@@ -1,15 +1,15 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import './InteractiveBackground.css';
 
 const InteractiveBackground = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const spotlightRef = useRef(null);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
-      setMousePosition({
-        x: e.clientX,
-        y: e.clientY,
-      });
+      if (spotlightRef.current) {
+        spotlightRef.current.style.setProperty('--mouse-x', `${e.clientX}px`);
+        spotlightRef.current.style.setProperty('--mouse-y', `${e.clientY}px`);
+      }
     };
 
     globalThis.addEventListener('mousemove', handleMouseMove);
@@ -26,10 +26,8 @@ const InteractiveBackground = () => {
       
       {/* The spotlight that follows the mouse */}
       <div 
+        ref={spotlightRef}
         className="interactive-spotlight"
-        style={{
-          background: `radial-gradient(100px circle at ${mousePosition.x}px ${mousePosition.y}px, var(--accent-glow, rgba(0, 82, 255, 0.08)), transparent 80%)`
-        }}
       ></div>
     </div>
   );
