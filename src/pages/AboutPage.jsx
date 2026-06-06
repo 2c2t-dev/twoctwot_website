@@ -8,10 +8,35 @@ const AboutPage = () => {
 
   const schema = JSON.stringify({
     "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "name": "2c2t.dev - " + t('about.title'),
-    "url": "https://2c2t.dev/about",
-    "description": t('about.seo_desc')
+    "@graph": [
+      {
+        "@type": "AboutPage",
+        "name": "2c2t.dev - " + t('about.title'),
+        "url": "https://2c2t.dev/about",
+        "description": t('about.seo_desc')
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": t('about.faq_q1', "Qu'est-ce que 2c2t.dev ?"),
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": t('about.faq_a1', "2c2t.dev est un collectif de passionnés d'infrastructure, de réseau et d'auto-hébergement créant des outils open-source.")
+            }
+          },
+          {
+            "@type": "Question",
+            "name": t('about.faq_q2', "Comment puis-je contribuer ?"),
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": t('about.faq_a2', "Vous pouvez contribuer en rejoignant notre serveur Discord ou en proposant des Pull Requests sur nos dépôts GitHub.")
+            }
+          }
+        ]
+      }
+    ]
   });
 
   return (
@@ -74,6 +99,20 @@ const AboutPage = () => {
               </BentoCard>
             </div>
           </div>
+        </div>
+
+        <div className="section-header animate-fade-in-up delay-3 mt-8">
+          <h2 className="brand-font">{t('about.faq_title', 'Questions Fréquentes')}</h2>
+        </div>
+        <div className="faq-layout animate-fade-in-up delay-3">
+          <BentoCard className="mb-4">
+            <h3 className="brand-font">{t('about.faq_q1', "Qu'est-ce que 2c2t.dev ?")}</h3>
+            <p>{t('about.faq_a1', "2c2t.dev est un collectif de passionnés d'infrastructure, de réseau et d'auto-hébergement créant des outils open-source.")}</p>
+          </BentoCard>
+          <BentoCard>
+            <h3 className="brand-font">{t('about.faq_q2', "Comment puis-je contribuer ?")}</h3>
+            <p>{t('about.faq_a2', "Vous pouvez contribuer en rejoignant notre serveur Discord ou en proposant des Pull Requests sur nos dépôts GitHub.")}</p>
+          </BentoCard>
         </div>
       </div>
     </div>
