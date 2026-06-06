@@ -45,6 +45,11 @@
 .about-side {
   display: flex;
   flex-direction: column;
+  gap: 2rem;
+}
+
+.about-side > .bento-card {
+  flex-grow: 1;
 }
 
 .dna-items {
@@ -111,6 +116,16 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-top: 0.5rem;
+}
+
+.mt-8 {
+  margin-top: 4rem;
+}
+
+.faq-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 @media (max-width: 900px) {
