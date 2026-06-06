@@ -33,6 +33,9 @@ jobs:
         with:
           args: >
             -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
+            -Dsonar.sources=src
+            -Dsonar.tests=src/tests
+            -Dsonar.exclusions=src/main.jsx,src/i18n.js,src/tests/**/*
       # If you wish to fail your job when the Quality Gate is red, uncomment the
       # following lines. This would typically be used to fail a deployment.
       # - uses: SonarSource/sonarqube-quality-gate-action@v1
