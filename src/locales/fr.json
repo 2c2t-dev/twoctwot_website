@@ -1,0 +1,95 @@
+{
+  "nav": {
+    "projects": "Projets",
+    "about": "À Propos",
+    "team": "Équipe",
+    "contact": "Contact",
+    "language": "EN"
+  },
+  "footer": {
+    "desc": "Collectif de projets open-tech dédié à l'infrastructure.",
+    "links": "Liens Utiles",
+    "socials": "Réseaux",
+    "rights": "Tous droits réservés."
+  },
+  "home": {
+    "seo_desc": "2c2t.dev est un collectif de projets open-tech dédié à l'infrastructure et l'auto-hébergement.",
+    "subtitle1": "L'innovation par l'expérimentation",
+    "subtitle2": "Projets open-tech dédiés à l'infrastructure, le déploiement réseau et l'auto-hébergement.",
+    "btn_explore": "Explorer les Projets",
+    "btn_about": "Découvrir notre ADN",
+    "projects_title": "Projets Phares",
+    "projects_desc": "Des solutions pensées pour fluidifier et accélérer l'installation de systèmes.",
+    "tech_title": "Notre Écosystème",
+    "community_title": "Rejoindre la Communauté",
+    "community_desc": "2c2t.dev est avant tout un lieu d'échange et d'expérimentation.",
+    "discord_title": "La Communauté Discord",
+    "discord_desc": "Rejoignez une communauté de passionnés. Discutez infrastructure, partagez vos expérimentations et participez à l'évolution de nos outils.",
+    "btn_discord": "Rejoindre le Serveur",
+    "github_title": "Open-Source First",
+    "github_desc": "Tous nos outils sont ouverts. Consultez le code, proposez des améliorations ou apprenez de notre architecture technique directement sur nos dépôts.",
+    "btn_github": "Explorer GitHub"
+  },
+  "projects": {
+    "seo_desc": "Découvrez nos solutions open-tech comme GetISO et NetISO.",
+    "title": "Nos Projets",
+    "desc": "La suite d'outils 2c2t pour l'infrastructure et le déploiement système.",
+    "btn_source": "Code Source",
+    "btn_access": "Accéder"
+  },
+  "project_getiso": {
+    "tagline": "Téléchargement Haute Vitesse",
+    "desc": "Plateforme optimisée pour le téléchargement d'images système."
+  },
+  "project_netiso": {
+    "tagline": "Service PXE Moderne",
+    "desc": "Démarrage réseau (PXE / iPXE) pour installer des systèmes d'exploitation directement via le réseau."
+  },
+  "project_bootiso": {
+    "tagline": "Création de support bootable",
+    "desc": "Utilitaire logiciel interconnecté à GetISO automatisant le téléchargement et le flashage USB sécurisé."
+  },
+  "status": {
+    "active": "Actif",
+    "upcoming": "À venir",
+    "indev": "En Développement"
+  },
+  "about": {
+    "seo_desc": "Découvrez l'ADN technique, la mission et les valeurs du collectif open-tech 2c2t.dev.",
+    "title": "À propos de 2c2t",
+    "desc": "L'ADN technique et la vision derrière le collectif.",
+    "mission_title": "Notre Mission",
+    "mission_desc": "Nous sommes un groupe de sysadmins, développeurs et passionnés de cybersécurité. Notre objectif est de simplifier et moderniser l'infrastructure bare-metal en créant des outils open-source rapides, fiables et accessibles.",
+    "values_title": "Nos Valeurs",
+    "val_open_title": "Open-Source",
+    "val_open_desc": "Le partage de connaissances est au cœur de notre démarche.",
+    "val_perf_title": "Performance",
+    "val_perf_desc": "Des outils conçus pour être rapides et économes en ressources.",
+    "val_exp_title": "Expérimentation",
+    "val_exp_desc": "Nous testons, cassons et reconstruisons pour apprendre.",
+    "dna_title": "Notre ADN",
+    "dna_bm_title": "Bare-Metal",
+    "dna_bm_desc": "Déploiements sur matériel physique",
+    "dna_net_title": "Réseau",
+    "dna_net_desc": "Routage, PXE, infrastructure globale",
+    "stat_projects": "Projets",
+    "stat_members": "Membres"
+  },
+  "team": {
+    "seo_desc": "Rencontrez les passionnés et experts techniques derrière le projet 2c2t.dev.",
+    "title": "L'Équipe",
+    "desc": "Les personnes passionnées derrière le projet 2c2t.dev.",
+    "role_admin": "Administrateur"
+  },
+  "contact": {
+    "seo_desc": "Discutez avec nous de projets d'infrastructure ou rejoignez notre communauté ouverte.",
+    "title": "Contact",
+    "desc": "Nous sommes toujours ouverts aux échanges, aux idées de projets et aux contributions.",
+    "methods_title": "Moyens de contact",
+    "info_title": "Informations",
+    "info_location_title": "Basé en France",
+    "info_location_desc": "Collectif opérant principalement depuis la région parisienne et le sud de la France.",
+    "info_contrib_title": "Ouverts aux contributions",
+    "info_contrib_desc": "Nos projets sont ouverts. N'hésitez pas à proposer des PRs ou discuter d'idées sur Discord."
+  }
+}
