@@ -25,14 +25,18 @@ import Navbar from '../components/Navbar';
 import ThemeToggle from '../components/ThemeToggle';
 import InteractiveBackground from '../components/InteractiveBackground';
 
+import { HelmetProvider } from 'react-helmet-async';
+
 const withProviders = (component) => (
-  <BrowserRouter>{component}</BrowserRouter>
+  <HelmetProvider>
+    <BrowserRouter>{component}</BrowserRouter>
+  </HelmetProvider>
 );
 
 describe('SEO Component', () => {
   it('updates document title and meta tags', () => {
     const schema = { "@context": "https://schema.org" };
-    render(<SEO title="Test Title" description="Test Desc" schema={schema} />);
+    render(withProviders(<SEO title="Test Title" description="Test Desc" schema={schema} />));
     expect(document.title).toBe('Test Title');
   });
 });
