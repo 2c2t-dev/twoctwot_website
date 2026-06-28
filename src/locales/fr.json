@@ -91,5 +91,21 @@
     "info_location_desc": "Collectif opérant principalement depuis la région parisienne et le sud de la France.",
     "info_contrib_title": "Ouverts aux contributions",
     "info_contrib_desc": "Nos projets sont ouverts. N'hésitez pas à proposer des PRs ou discuter d'idées sur Discord."
+  },
+  "legal": {
+    "title": "Mentions Légales",
+    "seo_desc": "Mentions légales du site 2c2t.dev",
+    "desc": "Informations légales concernant le collectif 2c2t.dev."
+  },
+  "cookies_policy": {
+    "title": "Politique de Cookies",
+    "seo_desc": "Politique de gestion des cookies de 2c2t.dev",
+    "desc": "Informations sur l'utilisation des cookies sur notre site."
+  },
+  "cookie_consent": {
+    "text": "Nous utilisons des cookies pour améliorer votre expérience. En continuant à naviguer, vous acceptez notre utilisation des cookies.",
+    "accept": "Accepter",
+    "decline": "Refuser",
+    "learn_more": "En savoir plus"
   }
 }

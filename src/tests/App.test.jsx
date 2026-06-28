@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 import { BrowserRouter } from 'react-router-dom';
-import SEO from '../components/SEO';
+import Seo from '../components/SEO';
 
 // Mock react-i18next
 vi.mock('react-i18next', () => ({
@@ -36,7 +36,7 @@ const withProviders = (component) => (
 describe('SEO Component', () => {
   it('updates document title and meta tags', () => {
     const schema = { "@context": "https://schema.org" };
-    render(withProviders(<SEO title="Test Title" description="Test Desc" schema={schema} />));
+    render(withProviders(<Seo title="Test Title" description="Test Desc" schema={schema} />));
     expect(document.title).toBe('Test Title');
   });
 });
@@ -104,7 +104,7 @@ describe('Navbar Component', () => {
 
   it('handles scroll event', () => {
     render(withProviders(<Navbar />));
-    fireEvent.scroll(window, { target: { scrollY: 100 } });
+    fireEvent.scroll(globalThis, { target: { scrollY: 100 } });
     expect(document.querySelector('.navbar-wrapper')).toHaveClass('scrolled');
   });
 });

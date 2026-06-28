@@ -12,7 +12,7 @@ const ProjectsPage = () => {
       tagline: t('project_getiso.tagline'),
       description: t('project_getiso.desc'),
       tags: ['Web', 'Direct'],
-      status: t('status.active'),
+      status: t('status.indev'),
       githubUrl: 'https://github.com/2c2t-dev',
       demoUrl: 'https://getiso.2c2t.dev',
       highlight: true,

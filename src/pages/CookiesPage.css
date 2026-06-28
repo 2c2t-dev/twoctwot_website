@@ -1,0 +1,51 @@
+.cookies-page {
+  padding: 6rem 0;
+}
+
+.cookies-content {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--surface);
+  border: 1px solid var(--surface-light);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.cookies-section {
+  margin-bottom: 2rem;
+}
+
+.cookies-section:last-child {
+  margin-bottom: 0;
+}
+
+.cookies-section h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--surface-light);
+}
+
+.cookies-section p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.cookies-section ul {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.cookies-section li {
+  margin-bottom: 0.5rem;
+}
+
+.cookies-section strong {
+  color: var(--text-primary);
+}
