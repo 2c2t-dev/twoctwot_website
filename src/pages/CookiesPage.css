@@ -2,7 +2,7 @@
   padding: 6rem 0;
 }
 
-.cookies-content {
+.policy-content {
   max-width: 800px;
   margin: 0 auto;
   background: var(--bg-card);
@@ -12,15 +12,15 @@
   box-shadow: var(--shadow-sm);
 }
 
-.cookies-section {
+.policy-section {
   margin-bottom: 2rem;
 }
 
-.cookies-section:last-child {
+.policy-section:last-child {
   margin-bottom: 0;
 }
 
-.cookies-section h2 {
+.policy-section h2 {
   font-family: 'MuseoModerno', sans-serif;
   font-size: 1.5rem;
   color: var(--text-primary);
@@ -29,23 +29,23 @@
   border-bottom: 1px solid var(--border-light);
 }
 
-.cookies-section p {
+.policy-section p {
   color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 1rem;
 }
 
-.cookies-section ul {
+.policy-section ul {
   color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 1rem;
   padding-left: 1.5rem;
 }
 
-.cookies-section li {
+.policy-section li {
   margin-bottom: 0.5rem;
 }
 
-.cookies-section strong {
+.policy-section strong {
   color: var(--text-primary);
 }
