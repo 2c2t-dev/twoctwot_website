@@ -37,8 +37,11 @@ const Navbar = () => {
     };
   }, [mobileMenuOpen]);
 
+  const currentLang = i18n.language || 'fr';
+  const isFrench = currentLang.startsWith('fr');
+
   const toggleLanguage = () => {
-    const nextLang = i18n.language.startsWith('fr') ? 'en' : 'fr';
+    const nextLang = isFrench ? 'en' : 'fr';
     i18n.changeLanguage(nextLang);
   };
 
@@ -79,9 +82,9 @@ const Navbar = () => {
             onClick={toggleLanguage} 
             className="lang-toggle-btn"
             aria-label="Toggle language"
-            title={i18n.language.startsWith('fr') ? 'Switch to English' : 'Passer en Français'}
+            title={isFrench ? 'Switch to English' : 'Passer en Français'}
           >
-            {i18n.language.startsWith('fr') ? 'FR' : 'EN'}
+            {isFrench ? 'FR' : 'EN'}
           </button>
           
           <ThemeToggle />

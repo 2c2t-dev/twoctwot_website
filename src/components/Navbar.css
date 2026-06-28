@@ -35,6 +35,12 @@
   z-index: 110;
   min-width: 180px;
   min-height: 32px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.navbar-brand span {
+  cursor: inherit !important;
 }
 
 .navbar-logo {

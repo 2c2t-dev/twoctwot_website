@@ -91,5 +91,21 @@
     "info_location_desc": "Collective operating mainly from the Paris region and the south of France.",
     "info_contrib_title": "Open to contributions",
     "info_contrib_desc": "Our projects are open. Feel free to submit PRs or discuss ideas on Discord."
+  },
+  "legal": {
+    "title": "Legal Notices",
+    "seo_desc": "Legal notices for the 2c2t.dev website",
+    "desc": "Legal information regarding the 2c2t.dev collective."
+  },
+  "cookies_policy": {
+    "title": "Cookie Policy",
+    "seo_desc": "Cookie management policy for 2c2t.dev",
+    "desc": "Information about the use of cookies on our site."
+  },
+  "cookie_consent": {
+    "text": "We use cookies to improve your experience. By continuing to visit this site, you agree to our use of cookies.",
+    "accept": "Accept",
+    "decline": "Decline",
+    "learn_more": "Learn more"
   }
 }

@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 const Footer = () => {
@@ -29,6 +30,14 @@ const Footer = () => {
             <h4 className="footer-heading">{t('footer.socials')}</h4>
             <ul>
               <li><a href="https://discord.2c2t.dev/" target="_blank" rel="noopener noreferrer">Discord</a></li>
+            </ul>
+          </div>
+          
+          <div className="footer-legal">
+            <h4 className="footer-heading">Légal</h4>
+            <ul>
+              <li><Link to="/legal">{t('legal.title')}</Link></li>
+              <li><Link to="/cookies">{t('cookies_policy.title')}</Link></li>
             </ul>
           </div>
         </div>
