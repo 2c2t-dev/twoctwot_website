@@ -18,13 +18,13 @@ const CookiesPage = () => {
             <p className="page-subtitle">{t('cookies_policy.desc')}</p>
           </header>
 
-          <div className="cookies-content">
-            <section className="cookies-section">
+          <div className="policy-content">
+            <section className="policy-section">
               <h2>Qu'est-ce qu'un cookie ?</h2>
               <p>Un cookie est un petit fichier texte déposé sur votre terminal (ordinateur, tablette, smartphone) lors de la visite d'un site web. Il permet au site de mémoriser vos actions et préférences (telles que la connexion, la langue, la taille de la police et d'autres préférences d'affichage) pendant une durée donnée.</p>
             </section>
 
-            <section className="cookies-section">
+            <section className="policy-section">
               <h2>Comment utilisons-nous les cookies ?</h2>
               <p>Nous n'utilisons que des cookies strictement nécessaires au fonctionnement de notre site :</p>
               <ul>
@@ -35,7 +35,7 @@ const CookiesPage = () => {
               <p>Nous n'utilisons <strong>aucun cookie de ciblage publicitaire ni de traçage comportemental</strong>.</p>
             </section>
 
-            <section className="cookies-section">
+            <section className="policy-section">
               <h2>Contrôler les cookies</h2>
               <p>Vous pouvez contrôler et/ou supprimer des cookies comme vous le souhaitez. Vous pouvez supprimer tous les cookies déjà stockés sur votre ordinateur et configurer la plupart des navigateurs pour qu'ils bloquent leur installation. Toutefois, si vous faites cela, vous devrez peut-être ajuster manuellement certaines préférences à chaque visite d'un site, et certains services et fonctionnalités pourraient ne pas fonctionner.</p>
             </section>
